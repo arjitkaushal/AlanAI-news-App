@@ -1,0 +1,27 @@
+#root,
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgb(196, 136, 231),
+    #2075d6,
+    #583daa,
+    #3f4a9b
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
