@@ -3,13 +3,12 @@ import { Typography } from "@material-ui/core";
 import wordsToNumbers from "words-to-numbers";
 import alanBtn from "@alan-ai/alan-sdk-web";
 
-import { NewsCards, Modal } from "./components";
+import { NewsCards } from "./components";
 import useStyles from "./styles";
 
 const App = () => {
   const [activeArticle, setActiveArticle] = useState(0);
   const [newsArticles, setNewsArticles] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
 
   const classes = useStyles();
 
@@ -20,8 +19,6 @@ const App = () => {
         if (command === "newHeadlines") {
           setNewsArticles(articles);
           setActiveArticle(-1);
-        } else if (command === "instructions") {
-          setIsOpen(true);
         } else if (command === "highlight") {
           setActiveArticle((prevActiveArticle) => prevActiveArticle + 1);
         } else if (command === "open") {
@@ -72,7 +69,6 @@ const App = () => {
         </div>
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 };
